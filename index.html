@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Screen Data — Инструкция</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Инструкция по использованию приложения для подписи чеков">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    .sidebar-nav li { font-weight: bold; color: black; }
+    .sidebar-nav a { color: black !important; font-weight: bold !important; }
+    .app-name-link {
+      color: black !important; font-weight: bold !important; font-size: 1em !important;
+      background-color: #80C0FF; padding: 4px 10px; border-radius: 6px; display: inline-block;
+    }
+    .sidebar-nav ul ul { padding-left: 12px !important; }
+    .sidebar-nav ul ul ul { padding-left: 12px !important; }
+    @media (min-width: 769px) { .sidebar-toggle { display: none !important; } }
+    @media (max-width: 768px) { #sidebar-toggle-btn { display: none !important; } }
+    #sidebar-toggle-btn {
+      position: fixed; top: 15px; left: 15px; z-index: 1000;
+      background-color: #e9ecef; border: 1px solid #ccc; border-radius: 6px;
+      padding: 6px 10px; cursor: pointer; font-size: 1.2em; font-weight: bold; color: #333;
+    }
+    body.close #sidebar-toggle-btn { left: 5px; }
+
+    @media (max-width: 768px) {
+      .markdown-section h1 { font-size: 1.8em !important; }
+      .markdown-section h3 { font-size: 1.3em !important; }
+      .markdown-section p { font-size: 1em !important; }
+      .markdown-section img { width: 100% !important; max-width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+  <button id="sidebar-toggle-btn" title="Свернуть/развернуть меню">☰</button>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Screen Data',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('sidebar-toggle-btn');
+      if (btn) {
+        btn.addEventListener('click', function() { document.body.classList.toggle('close'); });
+      }
+    });
+  </script>
+</body>
+</html>
